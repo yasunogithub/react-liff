@@ -22,16 +22,11 @@ const App: React.FC = () => {
 
     const login = () => {
         liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
-                            axios.post('https://mighty-anchorage-01609.herokuapp.com/remind',{},{
-	headers: {
-	  'Access-Control-Allow-Origin': '*'
-	})
-                .then(function (response) {
-                    console.log(response);
-                    })
-                .catch(function (error) {
-                    console.log(error);
-                    });
+            axios({
+  method: 'post',
+  url: 'https://mighty-anchorage-01609.herokuapp.com/remind';,
+        data: {}
+    });
 
                 liff.login()
                 setIsLogin(liff.isLoggedIn())
@@ -41,16 +36,12 @@ const App: React.FC = () => {
     const openQR = () => {
         liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
                 try {
-                axios.post('https://mighty-anchorage-01609.herokuapp.com/remind',{},{
-	headers: {
-	  'Access-Control-Allow-Origin': '*'
-	})
-                .then(function (response) {
-                    console.log(response);
-                    })
-                .catch(function (error) {
-                    console.log(error);
-                    });
+                axios({
+method: 'post',
+url: 'https://mighty-anchorage-01609.herokuapp.com/remind';,
+data: {}
+});
+
                 liff.scanCode()
                 .then(result => setValue(result.value!))
                 .catch(() => alert('cannot read QR'))
