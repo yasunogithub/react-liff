@@ -24,7 +24,7 @@ const App: React.FC = () => {
         liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
                             axios.post('https://mighty-anchorage-01609.herokuapp.com/remind',{
 	headers: {
-	  'Access-Control-Allow-Origin': '*',
+	  'Access-Control-Allow-Origin': '*'
 	})
                 .then(function (response) {
                     console.log(response);
@@ -43,7 +43,7 @@ const App: React.FC = () => {
                 try {
                 axios.post('https://mighty-anchorage-01609.herokuapp.com/remind',{
 	headers: {
-	  'Access-Control-Allow-Origin': '*',
+	  'Access-Control-Allow-Origin': '*'
 	})
                 .then(function (response) {
                     console.log(response);
