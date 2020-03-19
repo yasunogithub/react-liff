@@ -22,10 +22,7 @@ const App: React.FC = () => {
 
     const login = () => {
         liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
-                            axios.post('https://mighty-anchorage-01609.herokuapp.com/remind', {
-firstName: 'Fred',
-lastName: 'Flintstone'
-})
+                            axios.post('https://mighty-anchorage-01609.herokuapp.com/remind')
                 .then(function (response) {
                     console.log(response);
                     })
@@ -41,10 +38,7 @@ lastName: 'Flintstone'
     const openQR = () => {
         liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
                 try {
-                axios.post('https://mighty-anchorage-01609.herokuapp.com/remind', {
-firstName: 'Fred',
-lastName: 'Flintstone'
-})
+                axios.post('https://mighty-anchorage-01609.herokuapp.com/remind')
                 .then(function (response) {
                     console.log(response);
                     })
