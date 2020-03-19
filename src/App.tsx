@@ -6,6 +6,9 @@ import axios from 'axios';
 
 
 const liff = window.liff
+axios.defaults.baseURL = 'https://mighty-anchorage-01609.herokuapp.com';
+axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
 const App: React.FC = () => {
     const [value, setValue] = useState<string>('')
