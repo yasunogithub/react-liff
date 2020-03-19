@@ -13,7 +13,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <button className="button" onClick={sendMessage}>
-        Send Message {{ process.env.REACT_APP_LIFF_ID}}
+        Send Message {process.env.REACT_APP_LIFF_ID}
       </button>
     </div>
   )
