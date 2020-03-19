@@ -22,7 +22,10 @@ const App: React.FC = () => {
 
     const login = () => {
         liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
-                            axios.post('https://mighty-anchorage-01609.herokuapp.com/remind')
+                            axios.post('https://mighty-anchorage-01609.herokuapp.com/remind',{
+	headers: {
+	  'Access-Control-Allow-Origin': '*',
+	})
                 .then(function (response) {
                     console.log(response);
                     })
@@ -38,7 +41,10 @@ const App: React.FC = () => {
     const openQR = () => {
         liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
                 try {
-                axios.post('https://mighty-anchorage-01609.herokuapp.com/remind')
+                axios.post('https://mighty-anchorage-01609.herokuapp.com/remind',{
+	headers: {
+	  'Access-Control-Allow-Origin': '*',
+	})
                 .then(function (response) {
                     console.log(response);
                     })
