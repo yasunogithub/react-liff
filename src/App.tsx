@@ -2,6 +2,8 @@ import React, { FC, useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import './App.css'
 import { buildReplyText } from 'line-message-builder'
+import axios from 'axios';
+
 
 const liff = window.liff
 
@@ -25,6 +27,16 @@ const App: React.FC = () => {
     const openQR = () => {
         liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
                 try {
+                axios.post('https://mighty-anchorage-01609.herokuapp.com/remind', {
+firstName: 'Fred',
+lastName: 'Flintstone'
+})
+                .then(function (response) {
+                    console.log(response);
+                    })
+                .catch(function (error) {
+                    console.log(error);
+                    });
                 liff.scanCode()
                 .then(result => setValue(result.value!))
                 .catch(() => alert('cannot read QR'))
