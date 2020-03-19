@@ -39,7 +39,7 @@ const App: React.FC = () => {
             <div className="qrValue">{value}</div>
             <div className="loginButton">
             <Button variant="contained" color="primary" onClick={() => login()} disabled={isLogin}>
-            Login
+            Login!!!
             </Button>
             </div>
             <div className="qrButton">
