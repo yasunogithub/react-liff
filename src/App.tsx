@@ -25,7 +25,8 @@ const App: React.FC = () => {
             axios({
   method: 'post',
   url: 'https://mighty-anchorage-01609.herokuapp.com/remind',
-        data: {}
+        data: {},
+        headers:{"Access-Control-Allow-Origin":"*"}
     });
 
                 liff.login()
@@ -39,7 +40,9 @@ const App: React.FC = () => {
                 axios({
 method: 'post',
 url: 'https://mighty-anchorage-01609.herokuapp.com/remind',
-data: {}
+data: {},
+        headers:{"Access-Control-Allow-Origin":"*"}
+
 });
 
                 liff.scanCode()
