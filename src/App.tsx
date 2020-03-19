@@ -24,7 +24,7 @@ const App: React.FC = () => {
         liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
             axios({
   method: 'post',
-  url: 'https://mighty-anchorage-01609.herokuapp.com/remind';,
+  url: 'https://mighty-anchorage-01609.herokuapp.com/remind',
         data: {}
     });
 
@@ -38,7 +38,7 @@ const App: React.FC = () => {
                 try {
                 axios({
 method: 'post',
-url: 'https://mighty-anchorage-01609.herokuapp.com/remind';,
+url: 'https://mighty-anchorage-01609.herokuapp.com/remind',
 data: {}
 });
 
