@@ -17,10 +17,10 @@ http.interceptors.request.use((config) => {
         return Promise.reject(error)
         })
 const App: React.FC = () => {
-    const [body, getPlantBody] = useState({});
+    const [body, getPlantBody] = useState<object>({});
 
     const [value, setValue] = useState<string>('')
-        const [isLogin, setIsLogin] = useState<boolean>(false)
+    const [isLogin, setIsLogin] = useState<boolean>(false)
 
         useEffect(() => {
                 liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
@@ -67,15 +67,14 @@ const getPlant = () =>{
         .then(response => {
                 console.log('status:', response.status); // 200
                 console.log('body:', response.data);     // response body.
-                body = response.data;
-                return body;
+                getPlantBody(response.data);
 
 
                 // catchでエラー時の挙動を定義する
                 }).catch(err => {
                     console.log('err:', err);
                     });
-    return {error:"a"};
+    getPlantBody({'error':"a"});
 }
 
 return (
@@ -92,7 +91,7 @@ return (
         </Button>
         </div>
         <div className="qrButton">
-        <Button variant="contained" color="secondary" onClick={() => getPlantBody(getPlant())} disabled={!isLogin}>
+        <Button variant="contained" color="secondary" onClick={() => getPlant())} disabled={!isLogin}>
         Get Plant
         </Button>
         </div>
