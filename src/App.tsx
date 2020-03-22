@@ -17,7 +17,7 @@ http.interceptors.request.use((config) => {
     return Promise.reject(error)
 })
 const App: React.FC = () => {
-    const [body, setPlantBody] = useState<object>({});
+    const [body, setPlantBody] = useState<string>('');
     const [value, setValue] = useState<string>('')
     const [isLogin, setIsLogin] = useState<boolean>(false)
 
@@ -58,13 +58,13 @@ const App: React.FC = () => {
             .then(response => {
                 console.log('status:', response.status); // 200
                 console.log('body:', response.data);     // response body.
-                setPlantBody(response.data);
+                setPlantBody(response.data.toString());
 
 
                 // catchでエラー時の挙動を定義する
             }).catch(err => {
             console.log('err:', err);
-            setPlantBody({'error':"a"});
+            setPlantBody("a");
         });
     }
 
