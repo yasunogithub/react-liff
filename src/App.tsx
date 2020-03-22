@@ -53,17 +53,24 @@ const App: React.FC = () => {
             }
         })
     }
+    useEffect(() => {
+        const getUser = async () => {
+            const result = await http.get("/plant_categories" // thenで成功した場合の処理をかける
+            );
+            setPlantBody(result.data);
+        }
+        getUser()
+        }, []);
     const getPlant = () =>{
         http.get("/plant_categories") // thenで成功した場合の処理をかける
             .then(response => {
                 console.log('status:', response.status); // 200
                 console.log('body:', response.data);     // response body.
-                setPlantBody(Object.assign({}, response.data))
+
                 // catchでエラー時の挙動を定義する
             }).catch(err => {
             console.log('err:', err);
             var obj = {};
-            setPlantBody(Object.assign({}, obj))
 
         });
     }
