@@ -95,7 +95,7 @@ data: {},
             </Button>
             </div>
             <div className="button">
-            {count}
+            {body}
             </div>
             </div>
            );
