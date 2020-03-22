@@ -30,13 +30,6 @@ const App: React.FC = () => {
 
     const login = () => {
         liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
-                axios({
-method: 'post',
-url: 'https://mighty-anchorage-01609.herokuapp.com/remind',
-data: {},
-headers:{"Access-Control-Allow-Origin":"*"}
-});
-
                 liff.login()
                 setIsLogin(liff.isLoggedIn())
                 })
@@ -62,7 +55,6 @@ headers:{"Access-Control-Allow-Origin":"*"}
             })
 }
 const getPlant = () =>{
-    var body = {};
     http.get("/plant_categories") // thenで成功した場合の処理をかける
         .then(response => {
                 console.log('status:', response.status); // 200
@@ -73,8 +65,8 @@ const getPlant = () =>{
                 // catchでエラー時の挙動を定義する
                 }).catch(err => {
                     console.log('err:', err);
+                        getPlantBody({'error':"a"});
                     });
-    getPlantBody({'error':"a"});
 }
 
 return (
