@@ -96,6 +96,9 @@ data: {},
             Get Plant
             </Button>
             </div>
+            <div className="button">
+            {this.state.name}
+            </div>
             </div>
            );
 }
