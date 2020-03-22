@@ -17,7 +17,7 @@ http.interceptors.request.use((config) => {
     return Promise.reject(error)
 })
 const App: React.FC = () => {
-    const [body, setPlantBody] = useState({});
+    const [body, setPlantBody] = useState({plantCategories:[{name:"",imageUrl:""}]});
     const [value, setValue] = useState<string>('')
     const [isLogin, setIsLogin] = useState<boolean>(false)
 
@@ -93,7 +93,13 @@ const App: React.FC = () => {
                 </Button>
             </div>
             <div className="button">
-            {JSON.stringify(body)}
+             <ul>
+        {body.plantCategories.map(item => (
+          <li>
+            <a href={item.imageUrl}>{item.name}</a>
+          </li>
+        ))}
+      </ul>
             </div>
         </div>
     );
