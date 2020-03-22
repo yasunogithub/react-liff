@@ -59,8 +59,6 @@ const App: React.FC = () => {
                 console.log('status:', response.status); // 200
                 console.log('body:', response.data);     // response body.
                 setPlantBody([{text:"string"}]);
-
-
                 // catchでエラー時の挙動を定義する
             }).catch(err => {
             console.log('err:', err);
@@ -87,7 +85,7 @@ const App: React.FC = () => {
                 </Button>
             </div>
             <div className="button">
-                {JSON.stringify(body)}
+                {body}
             </div>
         </div>
     );
