@@ -17,7 +17,7 @@ http.interceptors.request.use((config) => {
     return Promise.reject(error)
 })
 const App: React.FC = () => {
-    const [body, setPlantBody] = useState('');
+    const [body, setPlantBody] = useState([{}]);
     const [value, setValue] = useState<string>('')
     const [isLogin, setIsLogin] = useState<boolean>(false)
 
@@ -53,16 +53,23 @@ const App: React.FC = () => {
             }
         })
     }
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await http.get(
+                `/plant_categories`,
+            );
+            setPlantBody(result.data);
+        };
+        fetchData();
+        }, []);
     const getPlant = () =>{
         http.get("/plant_categories") // thenで成功した場合の処理をかける
             .then(response => {
                 console.log('status:', response.status); // 200
                 console.log('body:', response.data);     // response body.
-                setPlantBody({a:""}.toString())
                 // catchでエラー時の挙動を定義する
             }).catch(err => {
             console.log('err:', err);
-            setPlantBody({b:""}.toString())
 
         });
     }
