@@ -60,7 +60,7 @@ data: {},
                 })
     }
     const getPlant = () =>{
-        response = http.get("/plant_categories");
+        var response = http.get("/plant_categories");
         console.log(reponse);
         this.setState({ events: response.data });
     }
