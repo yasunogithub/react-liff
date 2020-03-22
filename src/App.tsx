@@ -62,7 +62,6 @@ data: {},
     const getPlant = () =>{
         var response = http.get("/plant_categories");
         console.log(response);
-        this.setState({ events: response.data });
     }
 
     return (
