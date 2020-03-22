@@ -54,12 +54,10 @@ const App: React.FC = () => {
         })
     }
     useEffect(() => {
-        const getUser = async () => {
-            const result = await http.get("/plant_categories" // thenで成功した場合の処理をかける
-            );
-            setPlantBody(result.data);
-        }
-        getUser()
+        http.get('/plant_categories').then(res => {
+            setPlantBody(res.data)
+        })
+        return undefined
         }, []);
     const getPlant = () =>{
         http.get("/plant_categories") // thenで成功した場合の処理をかける
