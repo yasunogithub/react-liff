@@ -17,10 +17,7 @@ http.interceptors.request.use((config) => {
   return Promise.reject(error)
 })
 const App: React.FC = () => {
-     constructor(props) {
-    super(props);
-    this.state = { name: "Nakanishi" };
-  }
+      const [body, getPlantBody] = useState({});
 
     const [value, setValue] = useState<string>('')
         const [isLogin, setIsLogin] = useState<boolean>(false)
@@ -69,13 +66,14 @@ data: {},
     .then(response => {
         console.log('status:', response.status); // 200
         console.log('body:', response.data);     // response body.
-            this.setState({ name: this.state.name + "さん" });
+        return body;
 
 
     // catchでエラー時の挙動を定義する
     }).catch(err => {
         console.log('err:', err);
     });
+    return {error:"a"};
     }
 
     return (
@@ -92,12 +90,12 @@ data: {},
             </Button>
             </div>
             <div className="qrButton">
-            <Button variant="contained" color="secondary" onClick={() => getPlant()} disabled={!isLogin}>
+            <Button variant="contained" color="secondary" onClick={() => getPlantBody(getPlant())} disabled={!isLogin}>
             Get Plant
             </Button>
             </div>
             <div className="button">
-            {this.state.name}
+            {count}
             </div>
             </div>
            );
