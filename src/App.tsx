@@ -93,7 +93,13 @@ const App: React.FC = () => {
                 </Button>
             </div>
             <div className="button">
-                {body}
+            <ul>
+        {body.plantCategories.map(item => (
+          <li key={item.name}>
+            <a href={item.imageUrl}>{item.imageUrl}</a>
+          </li>
+        ))}
+      </ul>
             </div>
         </div>
     );
