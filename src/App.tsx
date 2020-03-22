@@ -53,22 +53,16 @@ const App: React.FC = () => {
             }
         })
     }
-    useEffect(() => {
-        http.get('/plant_categories').then(res => {
-            setPlantBody(res.data)
-        })
-        return undefined
-        }, []);
     const getPlant = () =>{
         http.get("/plant_categories") // thenで成功した場合の処理をかける
             .then(response => {
                 console.log('status:', response.status); // 200
                 console.log('body:', response.data);     // response body.
-
+                setPlantBody({a:""}.toString())
                 // catchでエラー時の挙動を定義する
             }).catch(err => {
             console.log('err:', err);
-            var obj = {};
+            setPlantBody({b:""}.toString())
 
         });
     }
