@@ -91,7 +91,7 @@ return (
         </Button>
         </div>
         <div className="qrButton">
-        <Button variant="contained" color="secondary" onClick={() => getPlant())} disabled={!isLogin}>
+        <Button variant="contained" color="secondary" onClick={() => getPlant()} disabled={!isLogin}>
         Get Plant
         </Button>
         </div>
