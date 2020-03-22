@@ -17,6 +17,11 @@ http.interceptors.request.use((config) => {
   return Promise.reject(error)
 })
 const App: React.FC = () => {
+     constructor(props) {
+    super(props);
+    this.state = { name: "Nakanishi" };
+  }
+
     const [value, setValue] = useState<string>('')
         const [isLogin, setIsLogin] = useState<boolean>(false)
 
@@ -64,6 +69,8 @@ data: {},
     .then(response => {
         console.log('status:', response.status); // 200
         console.log('body:', response.data);     // response body.
+            this.setState({ name: this.state.name + "さん" });
+
 
     // catchでエラー時の挙動を定義する
     }).catch(err => {
