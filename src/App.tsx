@@ -11,10 +11,7 @@ const http = axios.create({
   baseURL: `https://mighty-anchorage-01609.herokuapp.com/api/`
 })
 http.interceptors.request.use((config) => {
-  if (token) {  
     config.headers.Authorization = `Bearer HkYXti6w52aaG9XcI0ziDxhodbqkw3/hkZ8heSNcGVceJsh6iwldnuAYr7X363ErEMUBVKvzrRHJcFnS/MwjFg==`
-    return config
-  }
   return config
 }, function (error) {
   return Promise.reject(error)
