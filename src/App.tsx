@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import './App.css'
 import { buildReplyText } from 'line-message-builder'
 import axios from 'axios';
+import {MyCard} from "./components/MyCard.tsx"
 
 
 const liff = window.liff
@@ -90,9 +91,7 @@ const App: React.FC = () => {
             <div className="button">
              <ul>
         {body.plantCategories.map(item => (
-          <li>
-            <a href="https://saientist.s3-ap-northeast-1.amazonaws.com/radish.jpg">{item.name}</a>
-          </li>
+        <MyCard url="https://saientist.s3-ap-northeast-1.amazonaws.com/radish.jpg" />
         ))}
       </ul>
             </div>
