@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import './App.css'
 import { buildReplyText } from 'line-message-builder'
 import axios from 'axios';
-import {RecipeReviewCard} from "./components/RecipeReviewCard"
+import RecipeReviewCard from "./components/RecipeReviewCard"
 
 
 const liff = window.liff
