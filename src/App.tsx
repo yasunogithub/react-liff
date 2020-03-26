@@ -83,11 +83,6 @@ const App: React.FC = () => {
                 </Button>
             </div>
             <div className="qrButton">
-                <Button variant="contained" color="secondary" onClick={() => openQR()} disabled={!isLogin}>
-                    Open QR camera
-                </Button>
-            </div>
-            <div className="qrButton">
                 <Button variant="contained" color="secondary" onClick={() => getPlant()} disabled={!isLogin}>
                     Get Plant
                 </Button>
@@ -96,7 +91,7 @@ const App: React.FC = () => {
              <ul>
         {body.plantCategories.map(item => (
           <li>
-            <a href={item.imageUrl}>{item.name}</a>
+            <a href="https://saientist.s3-ap-northeast-1.amazonaws.com/radish.jpg">{item.name}</a>
           </li>
         ))}
       </ul>
